@@ -10,7 +10,7 @@ function App() {
         </div>
         <div className="detailed-text">
           <p>
-            Use AI to understand the vibe of neighborhoods in a new city by finding their equivalents in a city you know, for example when planning a vacation, booking a hotel or moving to a new city
+            Use AI to understand the vibe of new city's neighborhoods by finding their equivalents in a city you know, for example when planning a vacation, booking a hotel or moving to a new city
           </p>
         </div>
         <div className="search-boxes">
