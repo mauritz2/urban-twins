@@ -1,8 +1,17 @@
 import './App.css';
 import SearchBox from './components/SearchBox.js';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"; 
+import ComparisonPage from "./components/ComparisonPage";
 
-function App() {
-  return (
+
+function Home(){
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/comparison');
+  };
+
+  return(
       <div className="container background-image"> 
         <div className="header">
           <img className="logo" src="/images/logo_v2.png" alt="Urban Twins logo" />
@@ -30,9 +39,20 @@ function App() {
           </div>
         </div>
         <div className="search-button">
-          <button>Find urban twins</button>
+          <button onClick={handleButtonClick}>Find urban twins</button>
         </div>
       </div>
+  );
+}
+
+function App() {
+  return(
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/comparison" element={<ComparisonPage />} />
+      </Routes>
+    </Router>
   );
 }
 

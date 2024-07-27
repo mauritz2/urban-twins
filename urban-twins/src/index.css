@@ -9,12 +9,11 @@ body {
 
 .container {
   display: flex;
-  height: 100vh;
   flex-direction: column;
   color: white;
-  margin-left: 10%;
-  margin-top: 10%;
-  margin-right: 10%;
+  padding-left: 10%;
+  padding-top: 5%;
+  padding-right: 10%;
   align-items: center;
 }
 
