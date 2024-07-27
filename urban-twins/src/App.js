@@ -5,12 +5,12 @@ function App() {
   return (
       <div className="container background-image"> 
         <div className="header">
+          <img className="logo" src="/images/logo_v2.png" alt="Urban Twins logo" />
           <h1>Urban Twins</h1>
         </div>
         <div className="detailed-text">
           <p>
-            Use AI to understand the vibe of neighborhoods of a new city by finding their equivalent in a city you know. 
-            For example when planning a vacation, booking a hotel or moving to a new city
+            Use AI to understand the vibe of neighborhoods in a new city by finding their equivalents in a city you know, for example when planning a vacation, booking a hotel or moving to a new city
           </p>
         </div>
         <div className="search-boxes">
@@ -20,6 +20,9 @@ function App() {
           <div>
             <SearchBox placeholder="Paris" label="City you know" />
           </div>
+        </div>
+        <div className="search-button">
+          <button>Find urban twins</button>
         </div>
       </div>
   );
