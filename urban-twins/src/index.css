@@ -96,3 +96,31 @@ body {
   color: white;
   cursor: pointer;
 }
+
+/* Search suggestions */
+.search-box {
+  position: relative;
+}
+
+.suggestions-list {
+  color: black;
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  width: 20em;
+  max-height: 150px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}
