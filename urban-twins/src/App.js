@@ -10,15 +10,23 @@ function App() {
         </div>
         <div className="detailed-text">
           <p>
-            Use AI to understand the vibe of new city's neighborhoods by finding their equivalents in a city you know, for example when planning a vacation, booking a hotel or moving to a new city
+            Use AI to understand the vibe of new city's neighborhoods by finding their equivalents in your city
           </p>
+        </div>
+        <div className="benefits">
+          <h2>Example use cases</h2>
+          <ul>
+          <li className="benefit-title">Explore in what neighborhood to book your hotel</li>
+          <li className="benefit-title">Explore where to live when moving</li>
+          <li className="benefit-title">Explore where to go sightseeing</li>
+          </ul>
         </div>
         <div className="search-boxes">
           <div>
             <SearchBox placeholder="New York" label="City to explore" />
           </div>
           <div>
-            <SearchBox placeholder="Paris" label="City you know" />
+            <SearchBox placeholder="Paris" label="Your city" />
           </div>
         </div>
         <div className="search-button">
