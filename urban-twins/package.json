@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1",
@@ -13,8 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "node -r dotenv/config -e \"require('dotenv').config({ path: '.env.local' }); require('ejs').renderFile('public/index.ejs', process.env, {}, (err, str) => { if (err) throw err; require('fs').writeFileSync('public/index.html', str); });\" && react-scripts start",
+    "build": "node -r dotenv/config -e \"require('dotenv').config({ path: '.env.local' }); require('ejs').renderFile('public/index.ejs', process.env, {}, (err, str) => { if (err) throw err; require('fs').writeFileSync('public/index.html', str); });\" && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
