@@ -7,6 +7,9 @@ import ComparisonPage from "./components/ComparisonPage";
 function Home(){
   const navigate = useNavigate();
 
+  // console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
+  // console.log("Hello from Home component");
+
   const handleButtonClick = () => {
     navigate('/comparison');
   };
