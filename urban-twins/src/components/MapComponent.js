@@ -31,14 +31,7 @@ function MapComponent() {
           fetch('./neighborhoods/' + neighborhoodFile)
             .then(response => response.text())
             .then(data => {
-              
-              // Parse the polygon data --> Break out into separate function
-              //let manhattanCoords;
-              
-              const coordsArray = data.trim().split('\n').map(line => {
-                const [lng, lat] = line.trim().split(/\s+/);
-                return { lat: parseFloat(lat), lng: parseFloat(lng) };
-              });
+              let coordsArray = parseCoords(data);
 
               const manhattanCoords = coordsArray;
               
@@ -53,7 +46,6 @@ function MapComponent() {
               });
 
               manhattanPolygon.setMap(map);
-
 
             // Set the label of the polygon
             const bounds = new window.google.maps.LatLngBounds();
@@ -73,9 +65,7 @@ function MapComponent() {
     };
     
     initMap();
-
-
-
+    
     }, []);
   
     return (
@@ -85,5 +75,12 @@ function MapComponent() {
     );
   }
   
+const parseCoords = (coordsText) => {
+  return coordsText.trim().split('\n').map(line => {
+    const [lng, lat] = line.trim().split(/\s+/);
+    return { lat: parseFloat(lat), lng: parseFloat(lng) };
+  });
+}
+
   
   export default MapComponent;
