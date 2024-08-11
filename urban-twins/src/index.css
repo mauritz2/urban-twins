@@ -5,94 +5,45 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  overflow: hidden;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  padding-left: 10%;
-  padding-top: 5%;
-  padding-right: 10%;
-  align-items: center;
-}
-
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/./public/images/skyline-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.7);
+h2 {
+  margin: 0;
 }
 
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  height: 10em;
-}
-
-.logo {
-  width: 15em;
-  height: 15em;
-  filter: invert(100%);
-  }
-
-.header h1 {
-  margin: 0;
   margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  margin-right: 10em;
+  color: white;
 }
 
-.detailed-text {
-  text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
-  font-size: 1.2em;
+.header-text {
+  flex: 1;
+  margin: 0 10px;
 }
 
-.search-boxes {
+.search-box {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  flex: 1;
   align-items: center;
+  margin: 1em;
 }
 
-.search-boxes > div {
-  padding: 2.5em;
-  width: 30%;
-  height: 3.125em;
-}
-
-.search-boxes input {
-  width: 100%;
-  height: 100%;
-  padding: 0.625em;
-  font-size: 1em;
-}
-
-.search-boxes label {
+.search-box label {
   display: block;
   text-align: left;
-  font-weight: bold;
-  margin-bottom: 0.3125em;
+  margin-bottom: 0.3em;
 }
 
-.search-button button {
-  width: 100%;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 0.625em;
-  font-size: 1em;
-  background-color: #CF5C36;
+.search-button {
   border: none;
-  border-radius: 0.3125em;
-  color: white;
   cursor: pointer;
 }
 
@@ -122,4 +73,9 @@ body {
 
 .suggestions-list li:hover {
   background-color: #f0f0f0;
+}
+
+.map {
+  width: 100vw;
+  height: 100vh;
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef} from "react";
-import '../Map.css';
-//import LocationSearch from './LocationSearch';
+
 
 function MapComponent() {
   
@@ -122,7 +121,7 @@ function MapComponent() {
   
     return (
       <div>
-        <div ref={mapRef} style={{ width: "100%", height: "500px" }}></div>
+        <div ref={mapRef} className="map"></div>
         <input id="pac-input" className="controls" type="text" placeholder="Search Box" />
       </div>
     );

@@ -2,47 +2,32 @@ import './App.css';
 import SearchBox from './components/SearchBox.js';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"; 
 import ComparisonPage from "./components/ComparisonPage";
+import MapComponent from './components/MapComponent.js';
 
+
+// TODO - generate a URL when search selects a city so that it's linkeable, and store the results potentially
 
 function Home(){
   const navigate = useNavigate();
 
-  // console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
-  // console.log("Hello from Home component");
-
-  const handleButtonClick = () => {
-    navigate('/comparison');
-  };
-
   return(
-      <div className="container background-image"> 
+      <div className="container"> 
         <div className="header">
-          <img className="logo" src="/images/logo_v2.png" alt="Urban Twins logo" />
-          <h1>Urban Twins</h1>
-        </div>
-        <div className="detailed-text">
-          <p>
-            Use AI to understand the vibe of new city's neighborhoods by finding their equivalents in your city
-          </p>
-        </div>
-        <div className="benefits">
-          <h2>Example use cases</h2>
-          <ul>
-          <li className="benefit-title">Explore in what neighborhood to book your hotel</li>
-          <li className="benefit-title">Explore where to live when moving</li>
-          <li className="benefit-title">Explore where to go sightseeing</li>
-          </ul>
-        </div>
-        <div className="search-boxes">
-          <div>
-            <SearchBox placeholder="New York" label="City to explore" />
+          <div className="header-text">
+            <h2>NYC Urban Twins</h2>
+            <p>Understand NYC neighborhoods by letting AI find their equivalents in your city - for instance when figuring out where to stay</p>
           </div>
-          <div>
-            <SearchBox placeholder="Paris" label="Your city" />
+          <div className="search-form">
+            <div className="search-box">
+              <SearchBox placeholder="Your city (e.g., Paris)" label="Your city" />
+            </div>
+            <div className="search-button">
+              <input type="button" value="Explore" onClick={() => navigate('/comparison')} />
+            </div>
           </div>
         </div>
-        <div className="search-button">
-          <button onClick={handleButtonClick}>Find urban twins</button>
+        <div>
+            <MapComponent />
         </div>
       </div>
   );
