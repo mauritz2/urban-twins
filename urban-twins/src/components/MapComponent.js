@@ -16,10 +16,8 @@ function MapComponent() {
           center: { lat: 40.7831, lng: -73.9712 }, // Center of Manhattan
           zoom: 12,
         });
-
-
   
-        fetch('/manhattan.txt')
+        fetch('./neighborhoods/upper-west-side.txt')
           .then(response => response.text())
           .then(data => {
             let manhattanCoords;
@@ -53,21 +51,17 @@ function MapComponent() {
 
           // Create a MapLabel at the center
           const mapLabel = new window.MapLabel({
-            text: "Manhattan",
+            text: "East Village (Marais)",
             position: center,
             map: map,
-            fontSize: 20,
-            align: 'center'
+            fontSize: 12,
+            align: 'center',
           });
 
           mapLabel.set('position', center);
         })
-        .catch(error => {
-          console.error('Error fetching manhattan.txt:', error);
-        });
     };
 
-  
       window.initMap = initMap;
   
       if (window.google && window.google.maps) {

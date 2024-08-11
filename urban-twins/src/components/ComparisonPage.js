@@ -1,6 +1,5 @@
 import '../Map.css';
 import React from "react";
-import SearchBox from './SearchBox';
 import MapComponent from './MapComponent';
 
 function ComparisonPage() {
