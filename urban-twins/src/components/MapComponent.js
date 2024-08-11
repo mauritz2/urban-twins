@@ -12,18 +12,22 @@ function MapComponent() {
         const map = new window.google.maps.Map(mapRef.current, {
           center: centerOfManhattan,
           zoom: 12,
+          strictBounds: true,
           restriction: {
             latLngBounds: {
               north: nycBoundaries.north,
               south: nycBoundaries.south,
               west: nycBoundaries.west,
               east: nycBoundaries.east
-            },
-            strictBounds: true,
+            }
           },
         });
-  
-        fetch('./neighborhoods/upper-west-side.txt')
+
+        const neighborhoodsToDisplay = ['east-village.txt', 'upper-west-side.txt'];
+
+        neighborhoodsToDisplay.forEach(neighborhoodFile => {
+
+        fetch('./neighborhoods/' + neighborhoodFile)
           .then(response => response.text())
           .then(data => {
             let manhattanCoords;
@@ -68,13 +72,11 @@ function MapComponent() {
         })
     };
 
-      window.initMap = initMap;
-  
-      if (window.google && window.google.maps) {
-        initMap();
-      } else {
-        window.initMap = initMap;
-      }
+    
+    initMap();
+
+
+
     }, []);
   
     return (
