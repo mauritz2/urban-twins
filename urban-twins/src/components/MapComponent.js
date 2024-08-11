@@ -6,15 +6,21 @@ function MapComponent() {
   const mapRef = useRef(null);
 
     useEffect(() => {
-      // needs re-work when backend is setup
-      const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-      const address = "New York";
-      const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
-  
+      const centerOfManhattan = { lat: 40.7831, lng: -73.9712 };
+      const nycBoundaries = {"north": 40.915255, "south": 40.559000, "west": -74.255735, "east": -73.700272};
       const initMap = () => {
         const map = new window.google.maps.Map(mapRef.current, {
-          center: { lat: 40.7831, lng: -73.9712 }, // Center of Manhattan
+          center: centerOfManhattan,
           zoom: 12,
+          restriction: {
+            latLngBounds: {
+              north: nycBoundaries.north,
+              south: nycBoundaries.south,
+              west: nycBoundaries.west,
+              east: nycBoundaries.east
+            },
+            strictBounds: true,
+          },
         });
   
         fetch('./neighborhoods/upper-west-side.txt')
